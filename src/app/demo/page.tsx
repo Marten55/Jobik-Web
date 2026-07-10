@@ -26,14 +26,18 @@ export default function DemoPage() {
         <p className="mt-2 text-sm text-muted">
           Nájdeme ti <strong className="text-fg">nemecké firmy = tvojich potenciálnych
           klientov</strong> pre tvoje remeslo, aj s kontaktom a krátkym „čo robia". V demo verzii
-          ti navyše ukážeme, ako vyzerá personalizované oslovenie — pošleme pár ukážkových
-          e-mailov priamo do tvojej schránky.
+          ich za teba <strong className="text-fg">naozaj oslovíme</strong> personalizovaným
+          e-mailom z tvojej vlastnej adresy — presne ako v plnej verzii, len bezplatne a v malom.
         </p>
         <ul className="mt-3 space-y-1 text-sm text-muted">
-          <li>✅ 2 dni prístup, bez záväzku</li>
-          <li>✅ ukážka reálnych nemeckých firiem pre tvoje remeslo</li>
-          <li>✅ 10 ukážkových e-mailov do tvojej schránky</li>
+          <li>✅ 3 dni zadarmo, bez záväzku</li>
+          <li>✅ reálne nemecké firmy pre tvoje remeslo</li>
+          <li>✅ až 15 reálnych oslovení denne z tvojej domény</li>
         </ul>
+        <p className="mt-3 text-sm text-muted">
+          Aby sme mohli posielať z tvojej adresy, spolu ti overíme doménu a nastavíme právny
+          základ (nem. UWG §7) — prevedieme ťa tým. Vyplň formulár a ozveme sa.
+        </p>
         <p className="mt-3 text-sm text-muted">
           Chceš rovno objednať?{" "}
           <Link href="/" className="text-accent hover:underline">Pozri balíky a rezervuj miesto</Link>.
