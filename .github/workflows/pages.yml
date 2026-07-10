@@ -1,0 +1,51 @@
+name: Deploy to GitHub Pages
+
+# Statický web (Next.js export) → GitHub Pages. Verejný repo len s týmto webom;
+# backend Jobíka žije v samostatnom súkromnom repe.
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Nechaj vždy dobehnúť rozbehnutý deploy; nové pushe zaraď do fronty.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Backend appky (kam ide formulár) + adresa platenej appky (odkazy na login).
+      NEXT_PUBLIC_API_BASE: https://api.admtechnics.sk
+      NEXT_PUBLIC_APP_URL: https://jobik.admtechnics.sk
+      # Podcesta pri projektovej Pages URL (marten55.github.io/jobik-web).
+      # Pri vlastnej doméne (CNAME) tento riadok zmaž.
+      NEXT_PUBLIC_BASE_PATH: /jobik-web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install deps
+        run: npm ci || npm install
+      - name: Build static export
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
