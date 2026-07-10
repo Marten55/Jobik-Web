@@ -37,7 +37,7 @@ export function DemoRequestForm() {
         throw new Error(body.detail || `Chyba ${res.status}`);
       }
       setStatus("ok");
-      setMsg("Ďakujeme! Ozveme sa ti čo najskôr a pripravíme ti demo.");
+      setMsg("Ďakujeme! Ozveme sa ti a spolu spustíme 3-dňové demo na tvoje remeslo — prevedieme ťa nastavením.");
     } catch (err) {
       setStatus("err");
       setMsg(err instanceof Error ? err.message : "Neznáma chyba");
@@ -121,7 +121,7 @@ export function DemoRequestForm() {
         {status === "sending" ? "Odosielam…" : "Chcem demo zadarmo"}
       </button>
       <p className="mt-2 text-center text-xs text-muted">
-        Žiadny záväzok. Ozveme sa ti a pripravíme krátke demo na tvoje remeslo.
+        Žiadny záväzok. Ozveme sa ti, pomôžeme s nastavením a spustíme 3-dňové demo.
       </p>
     </form>
   );

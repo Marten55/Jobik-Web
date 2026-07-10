@@ -6,7 +6,7 @@ import { APP_URL } from "@/lib/site";
 export const metadata = {
   title: "Demo zadarmo — Jobík",
   description:
-    "Vyskúšaj Jobík nezáväzne. Nájdeme ti nemecké firmy pre tvoje remeslo a ukážeme, ako ich osloviť.",
+    "Vyskúšaj Jobík 3 dni zadarmo. Nájdeme ti nemecké firmy pre tvoje remeslo a naozaj ich oslovíme z tvojej adresy — až 15 e-mailov denne, bez záväzku.",
 };
 
 export default function DemoPage() {
