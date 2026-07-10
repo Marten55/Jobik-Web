@@ -24,9 +24,8 @@ jobs:
       # Backend appky (kam ide formulár) + adresa platenej appky (odkazy na login).
       NEXT_PUBLIC_API_BASE: https://api.admtechnics.sk
       NEXT_PUBLIC_APP_URL: https://jobik.admtechnics.sk
-      # Podcesta pri projektovej Pages URL (marten55.github.io/Jobik-Web).
-      # Pri vlastnej doméne (CNAME) tento riadok zmaž.
-      NEXT_PUBLIC_BASE_PATH: /Jobik-Web
+      # Vlastná doména (demo.admtechnics.sk) beží na koreni → žiadny basePath.
+      # (Pri projektovej Pages URL by tu bolo NEXT_PUBLIC_BASE_PATH: /Jobik-Web.)
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

@@ -16,7 +16,7 @@ Oba formuláre POSTujú na existujúci verejný endpoint backendu:
 |---|---|---|
 | `NEXT_PUBLIC_API_BASE` | backend appky (kam ide formulár) | `https://api.admtechnics.sk` |
 | `NEXT_PUBLIC_APP_URL` | platená appka (odkazy „Prihlásiť sa") | `https://jobik.admtechnics.sk` |
-| `NEXT_PUBLIC_BASE_PATH` | podcesta na Pages | `/Jobik-Web` (pri vlastnej doméne zmaž) |
+| `NEXT_PUBLIC_BASE_PATH` | podcesta na Pages | *(prázdne — beží na vlastnej doméne `demo.admtechnics.sk`)* |
 
 ## Lokálne
 ```bash
@@ -27,10 +27,10 @@ npm run build      # statický export do out/
 
 ## Deploy
 Automaticky cez GitHub Actions (`.github/workflows/pages.yml`) pri každom push na `master`.
-Výstup `out/` sa nasadí na GitHub Pages → `https://marten55.github.io/Jobik-Web`.
+Výstup `out/` sa nasadí na GitHub Pages → **`https://demo.admtechnics.sk`**
+(vlastná doména cez `public/CNAME`).
 
 ### Manuálne kroky (jednorazovo)
-1. Backend (Render): do `FRONTEND_ORIGINS` (CORS) pridať `https://marten55.github.io`,
+1. **DNS (Websupport, admtechnics.sk):** CNAME `demo` → `marten55.github.io`.
+2. **Backend (Render):** do `FRONTEND_ORIGINS` (CORS) pridať `https://demo.admtechnics.sk`,
    inak formulár hlási „Failed to fetch".
-2. (voliteľné) Vlastná doména: pridať `public/CNAME` so subdoménou a nastaviť DNS;
-   potom zmaž `NEXT_PUBLIC_BASE_PATH` z workflowu.
