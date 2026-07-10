@@ -16,7 +16,7 @@ Oba formuláre POSTujú na existujúci verejný endpoint backendu:
 |---|---|---|
 | `NEXT_PUBLIC_API_BASE` | backend appky (kam ide formulár) | `https://api.admtechnics.sk` |
 | `NEXT_PUBLIC_APP_URL` | platená appka (odkazy „Prihlásiť sa") | `https://jobik.admtechnics.sk` |
-| `NEXT_PUBLIC_BASE_PATH` | podcesta na Pages | `/jobik-web` (pri vlastnej doméne zmaž) |
+| `NEXT_PUBLIC_BASE_PATH` | podcesta na Pages | `/Jobik-Web` (pri vlastnej doméne zmaž) |
 
 ## Lokálne
 ```bash
@@ -27,7 +27,7 @@ npm run build      # statický export do out/
 
 ## Deploy
 Automaticky cez GitHub Actions (`.github/workflows/pages.yml`) pri každom push na `master`.
-Výstup `out/` sa nasadí na GitHub Pages → `https://marten55.github.io/jobik-web`.
+Výstup `out/` sa nasadí na GitHub Pages → `https://marten55.github.io/Jobik-Web`.
 
 ### Manuálne kroky (jednorazovo)
 1. Backend (Render): do `FRONTEND_ORIGINS` (CORS) pridať `https://marten55.github.io`,
