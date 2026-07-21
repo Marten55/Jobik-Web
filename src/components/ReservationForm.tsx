@@ -238,7 +238,11 @@ export function ReservationForm() {
         {status === "sending" ? "Odosielam…" : "Rezervovať miesto"}
       </button>
       <p className="mt-2 text-center text-xs text-muted">
-        Nezáväzné odoslanie. Ozveme sa ti a pošleme faktúru — platíš až potom.
+        Nezáväzné odoslanie. Ozveme sa ti a pošleme faktúru — platíš až potom. Odoslaním súhlasíš{" "}
+        <a href="/vop" className="text-accent hover:underline">
+          so Všeobecnými obchodnými podmienkami
+        </a>
+        .
       </p>
     </form>
   );
